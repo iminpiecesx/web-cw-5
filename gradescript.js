@@ -1,37 +1,39 @@
-document.getElementById(submitButton).onclick = function() {grades()};
 
 
-function grades(){
 
-var q = parseFloat(document.getElementById(Quizes).value);
-var m = parseFloat(document.getElementById(Midterm).value);
-var f = parseFloat(document.getElementById(FinalTest).value);
-var o = parseFloat(document.getElementById(Oral).value);
+function submit(){
 
-var total = q + m + f + o 
-document.getElementById(total_grades).value = total; 
+let q = parseInt(document.getElementById("Quizes").value);
+let m = parseInt(document.getElementById("Midterm").value);
+let f = parseInt(document.getElementById("FinalTest").value);
+let o = parseInt(document.getElementById("Oral").value);
 
-if (total = 100 && total >= 90 ){
-    document.getElementById('final_grade').innerHTML = "A";
+let total =q+m+f+o; 
+
+
+
+if (total <= 100 && total >= 90 ){
+    document.getElementById(total_grades).innerText = total; 
+    document.getElementById('final_grade').innerText = "A";
 }
 
-if (total >= 80 ){
-    document.getElementById('final_grade').innerHTML = "B";
+else if (total >= 80 ){
+    document.getElementById(total_grades).innerText = total; 
+    document.getElementById('final_grade').innerText = "B";
 }
 
-if (total >=70 ){
-    document.getElementById('final_grade').innerHTML = "C";
+else if (total >=70 ){
+    document.getElementById(total_grades).innerText = total; 
+    document.getElementById('final_grade').innerText = "C";
 }
 
-if (total >=60 ){
-    document.getElementById('final_grade').innerHTML = "D";
+else if (total >=60 ){
+    document.getElementById(total_grades).innerText = total; 
+    document.getElementById('final_grade').innerText = "D";
 }
 
 else{
-    document.getElementById('final_grade').innerHTML = "F";
+    document.getElementById(total_grades).innerText = total; 
+    document.getElementById('final_grade').innerText = "F";
 }
-
-
-
-
-}
+};
